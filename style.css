@@ -60,9 +60,9 @@ h1 {
 }
 
 .message {
-  max-width: 800px;
+  max-width: 600px;
   margin-top: 20px;
-  font-size: 1.3em;
+  font-size: 1.1em;
   line-height: 1.6em;
   opacity: 0;
   animation: typing 4s steps(60) 2s forwards;
