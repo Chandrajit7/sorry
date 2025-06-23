@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.heart {
+  width: 100px;
+  height: 90px;
+  position: absolute;
+  animation: float 10s linear infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  width: 100px;
+  height: 90px;
+  background: #fff;
+  position: absolute;
+  border-radius: 50px 50px 0 0;
+}
+
+.heart:before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+@keyframes float {
+  0% {
+    top: 100%;
+    left: calc(100% * var(--i));
+    opacity: 1;
+  }
+  100% {
+    top: -100px;
+    left: calc(100% * var(--i) + 50px);
+    opacity: 0;
+  }
+}
+
+h1 {
+  font-size: 3em;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.message {
+  max-width: 600px;
+  margin-top: 20px;
+  font-size: 1.3em;
+  line-height: 1.6em;
+  opacity: 0;
+  animation: typing 4s steps(60) 2s forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+}
+
+@keyframes typing {
+  from { width: 0; opacity: 1; }
+  to { width: 100%; opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn {
+  margin-top: 40px;
+  padding: 15px 30px;
+  border: none;
+  background: white;
+  color: #ff5e79;
+  font-size: 1.2em;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  animation: pulse 2s infinite;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255,255,255,0.8);
+  }
+}
